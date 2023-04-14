@@ -1,0 +1,27 @@
+.todoForm {
+    background-color:rgb(112, 162, 154);
+    display: flex;
+    padding: 1rem;
+}
+
+.todoForm input {
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 0.5rem;
+    border: 1px solid #ccc;
+    flex: 3;
+}
+
+.todoForm button {
+    margin-left: 0.4rem;
+    flex: 1;
+    background-color:rgb(89, 131, 124);
+    border: 0;
+    border-radius: 4px;
+}
+
+.todoForm button:hover {
+    background-color:rgb(76, 113, 107);
+    cursor: pointer;
+}

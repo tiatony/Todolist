@@ -1,0 +1,31 @@
+.item {
+    border: 1px solid rgb(76, 99, 154);
+    list-style: none;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+input[type=checkbox] {
+    opacity:0;
+    scale: 1.8;
+    position:relative;
+    z-index: 20;
+    cursor:pointer;
+}
+
+.fakeBox {
+    z-index: 5;
+    display:inline-flex;
+    vertical-align:middle;
+    position:relative;
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+    border: 2px solid rgb(76, 99, 154);
+    margin-left: -1.1rem;
+}
+
+.checked {
+    background-color: rgb(76, 99, 154);
+}
