@@ -1,18 +1,21 @@
+import { useContext } from 'react'
 import Item from './Item'
 import classes from './List.module.css'
+import TaskContext from '../Store/task-context'
 
-const List = props => {
+const List = () => {
+    const tasksCtx = useContext(TaskContext)
 
     const removeHandler = (id) => {
-        props.onRemoveTask(id)
+        tasksCtx.removeTask(id)
     }
 
     const changeCheckHandler = (id, checked) => {
-        props.onChangeCheckedTask(id, checked)
+        tasksCtx.changeTaskCheck(id, checked)
     }
-
+    console.log(tasksCtx)
     return <ul className={classes.list}>
-        {props.tasks.map(task => (
+        {tasksCtx.tasks.map(task => (
             <Item key={task.id} id={task.id} name={task.name} checked={task.checked} onRemove={removeHandler} onChangeCheck={changeCheckHandler}/>
         ))}
     </ul>
