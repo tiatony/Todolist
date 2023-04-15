@@ -7,9 +7,13 @@ const List = props => {
         props.onRemoveTask(id)
     }
 
+    const changeCheckHandler = (id, checked) => {
+        props.onChangeCheckedTask(id, checked)
+    }
+
     return <ul className={classes.list}>
         {props.tasks.map(task => (
-            <Item key={task.id} id={task.id} name={task.name} onRemove={removeHandler}/>
+            <Item key={task.id} id={task.id} name={task.name} checked={task.checked} onRemove={removeHandler} onChangeCheck={changeCheckHandler}/>
         ))}
     </ul>
 }

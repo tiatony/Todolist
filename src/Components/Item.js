@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import classes from './Item.module.css'
 
 const Item = props => {
-    const [isChecked, setIsChecked] = useState(false)
-    const checkboxClass = `${classes.fakeBox} ${isChecked && classes.checked}`
+    const checkboxClass = `${classes.fakeBox} ${props.checked && classes.checked}`
 
     const changeHandler = (event) => {
-        setIsChecked(event.target.checked)
+        props.onChangeCheck(props.id, event.target.checked)
     }
 
     const removeHandler = () => {
@@ -16,7 +14,7 @@ const Item = props => {
     return <li className={classes.item}>
         <div className={classes.checkbox}>
             <input type="checkbox" onChange={changeHandler}/>
-            <div className={checkboxClass} /> 
+            <div className={checkboxClass} />
         </div>
         <div className={classes.name}>
             <span>{props.name}</span>
