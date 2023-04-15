@@ -17,9 +17,15 @@ const Todo = props => {
         })
     }
 
+    const removeTaskHandler = (id) => {
+        setTasks((previousTasks) => {
+            return previousTasks.filter(task => task.id !== id)
+        })
+    }
+
     return <div className={classes.todo}>
         <Form onAddTask={addTaskHandler}/>
-        <List tasks={tasks}/>
+        <List tasks={tasks} onRemoveTask={removeTaskHandler}/>
     </div>
 }
 

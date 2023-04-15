@@ -1,6 +1,5 @@
 .list {
     display: flex;
     flex-direction:column-reverse;
-    background-color: rgb(110, 138, 163);
     padding:0;
 }

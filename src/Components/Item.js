@@ -9,8 +9,21 @@ const Item = props => {
         setIsChecked(event.target.checked)
     }
 
+    const removeHandler = () => {
+        props.onRemove(props.id)
+    }
+
     return <li className={classes.item}>
-        <input type="checkbox" onChange={changeHandler}/><div className={checkboxClass} /> <span>{props.name}</span>
+        <div className={classes.checkbox}>
+            <input type="checkbox" onChange={changeHandler}/>
+            <div className={checkboxClass} /> 
+        </div>
+        <div className={classes.name}>
+            <span>{props.name}</span>
+        </div>
+        <div className={classes.remove}>
+            <button onClick={removeHandler}>Remove</button>
+        </div>
     </li>
 }
 
