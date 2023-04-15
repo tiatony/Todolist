@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
-import classes from './TodoForm.module.css'
+import classes from './Form.module.css'
 
-const TodoForm = props => {
+const Form = props => {
     const taskNameRef = useRef()
 
     const onAddTaskHandler = (event) => {
@@ -14,10 +14,10 @@ const TodoForm = props => {
         taskNameRef.current.focus()
     }
 
-    return <form className={classes.todoForm} onSubmit={onAddTaskHandler}>
+    return <form className={classes.form} onSubmit={onAddTaskHandler}>
             <input type="text" ref={taskNameRef} />
             <button type="submit">Add item</button>
         </form>
 }
 
-export default TodoForm
+export default Form

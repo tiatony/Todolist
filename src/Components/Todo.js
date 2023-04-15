@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import classes from './Todo.module.css'
-import TodoForm from './TodoForm'
-import TodoList from './TodoList'
+import Form from './Form'
+import List from './List'
 
 const TASKS = [
     { id: 1, name: 'task1' },
@@ -18,8 +18,8 @@ const Todo = props => {
     }
 
     return <div className={classes.todo}>
-        <TodoForm onAddTask={addTaskHandler}/>
-        <TodoList tasks={tasks}/>
+        <Form onAddTask={addTaskHandler}/>
+        <List tasks={tasks}/>
     </div>
 }
 
